@@ -2,6 +2,9 @@
     <div>
        Contatti 
     </div>
+    <div>
+        <a href="#">GitHub</a>
+    </div>
 </template>
 <script>
 export default {

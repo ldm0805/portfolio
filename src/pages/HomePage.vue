@@ -88,10 +88,11 @@ $(document).ready(function () {
     padding: .5em 1em;
     text-decoration: none;
     border: 2px solid black;
-    color:  $font_color;
+    color: $font_color;
     &:hover{
         scale: 1.1;
         box-shadow: black 3px 3px;
+        
     }
     
 }
