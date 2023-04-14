@@ -34,6 +34,10 @@ export default {
                         label: "Portfolio",
                         routeName: "PortfolioPage",  
                     },
+                    {
+                        label: "Contatti",
+                        routeName: "ContattiPage",  
+                    },
                 ]
             }
         }

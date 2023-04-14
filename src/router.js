@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 // //2 importare le componenti che rappresentano le pagine
 import HomePage from './pages/HomePage.vue';
 import PortfolioPage from './pages/PortfolioPage.vue';
+import ContattiPage from './pages/ContattiPage.vue';
+
 
 
 
@@ -20,6 +22,11 @@ const router = createRouter({
             path: '/PortfolioPage',
             name: 'PortfolioPage',
             component: PortfolioPage
+        },
+        {
+            path: '/ContattiPage',
+            name: 'ContattiPage',
+            component: ContattiPage
         },
     ]
 })
