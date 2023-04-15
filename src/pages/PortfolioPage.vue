@@ -1,12 +1,14 @@
 <script>
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import { defineComponent } from 'vue'
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
   export default {
     name: 'PortfolioPage',
     components: {
     Carousel,
     Slide,
     Navigation,
+
   },
   data(){
     return{
@@ -33,7 +35,23 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel'
         image: '../../public/img/cane.jpg',
         description: 'Immagine sdfsdfsd',
         },
-    ]
+    ],
+    settings: {
+      itemsToShow: 1,
+      snapAlign: 'center',
+    },
+    breakpoints: {
+      // 700px and up
+      700: {
+        itemsToShow: 3.5,
+        snapAlign: 'center',
+      },
+      // 1024 and up
+      1024: {
+        itemsToShow: 4,
+        snapAlign: 'start',
+      },
+    },
     }
   }
   }
@@ -44,11 +62,18 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel'
             Portfolio
         </h2>
     </div>
-    <carousel :items-to-show="1.5">
-    <slide v-for="(item, index) in slides" :key="index">
+    <carousel :itemsToShow="3" :wrapAround="true" :transition="400" v-bind="settings" :breakpoints="breakpoints">
+    <slide v-for="(item, index) in slides" :key="index" class="p-4">
      <div>
-      <img :src="item.image">
-      {{item.description}}
+      <div class="cont_image">
+        <img :src="item.image">
+      </div>
+      <div class="description">
+        <span>
+          {{item.description}}
+        </span>
+          
+      </div>
      </div>
     </slide>
 
@@ -63,7 +88,52 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 .portfolio_cont{
     color: $font_color;
+    
+  }
+  
+  span
+  {
+    color: $font_color;  
+    }
 
+    .carousel__slide {
+  padding: 5px;
+}
+
+.carousel__viewport {
+  perspective: 200px;
+}
+
+.carousel__track {
+  transform-style: preserve-3d;
+}
+
+.carousel__slide--sliding {
+  transition: 0.5s;
+}
+
+.carousel__slide {
+  opacity: 0.9;
+  transform: rotateY(-20deg) scale(0.9);
+}
+
+.carousel__slide--active ~ .carousel__slide {
+  transform: rotateY(20deg) scale(0.9);
+}
+
+.carousel__slide--prev {
+  opacity: 1;
+  transform: rotateY(-10deg) scale(0.95);
+}
+
+.carousel__slide--next {
+  opacity: 1;
+  transform: rotateY(10deg) scale(0.95);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  transform: rotateY(0) scale(1.1);
 }
 
 </style>
