@@ -16,7 +16,7 @@
 export default {
     
 }
-let words = ['<Ciao, mi chiamo Leonardo Di Maggio />'],
+let words = ['<Leonardo Di Maggio />'],
     part,
     i = 0,
     offset = 0,

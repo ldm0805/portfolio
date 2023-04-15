@@ -43,13 +43,13 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
     breakpoints: {
       // 700px and up
       700: {
-        itemsToShow: 3.5,
+        itemsToShow: 3,
         snapAlign: 'center',
       },
       // 1024 and up
       1024: {
         itemsToShow: 4,
-        snapAlign: 'start',
+        snapAlign: 'center',
       },
     },
     }
@@ -78,10 +78,22 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
     </slide>
 
     <template #addons>
-      <navigation />
+      
+      <navigation>
+      <template #next>
+        <span> <i class="fa-solid fa-chevron-right"></i> </span>
+      </template>
+      <template #prev>
+        <span> <i class="fa-solid fa-chevron-left"></i> </span>
+      </template>
+    </navigation>
       <pagination />
     </template>
+
+  
   </carousel>
+
+
 </template>
 <style lang="scss" scoped>
     @use "../styles/partials/variables" as *;
@@ -134,6 +146,16 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
 .carousel__slide--active {
   opacity: 1;
   transform: rotateY(0) scale(1.1);
+}
+
+span{
+  .fa-chevron-right,.fa-chevron-left{
+    color: $font_color;
+    font-size: 25px;
+    &:hover{
+      font-size: 30px;
+    }
+  }
 }
 
 </style>
