@@ -1,3 +1,30 @@
+<script>
+export default {
+  methods: {
+    sendMail() {
+      var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      };
+
+      const serviceID = "service_87wg2n8";
+      const templateID = "template_1fzse0z";
+
+      emailjs.send(serviceID, templateID, params)
+        .then(res => {
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          console.log(res);
+          alert("Your message sent successfully!!")
+
+        })
+        .catch(err => console.log(err));
+    }
+  }
+}
+</script>
 <template lang="">
     <div class="cont d-flex justify-content-center">
 
@@ -47,11 +74,10 @@
                 <h5 for="message">Message</h5>
                 <textarea class="form-control" id="message" rows="3"></textarea>
               </div>
-              <button class="btn btn-primary" onclick="sendMail()">Submit</button>
+              <button class="btn btn-primary" @click="sendMail()">Submit</button>
             </div>
 
 </template>
-
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 div{
