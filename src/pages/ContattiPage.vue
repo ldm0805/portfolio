@@ -64,9 +64,32 @@ export default {
     }
   }
 }
+
 </script>
 <template lang="">
-  <div class="cont d-flex justify-content-center">
+  <div class="cont d-flex justify-content-center flex-column align-items-center">
+    
+
+    <div class="d-flex flex-column gap-3">
+        <div>
+            Contatti 
+        </div>
+        <a href="https://github.com/ldm0805"> 
+            <i class="fa-brands fa-square-github fa-xl"></i> GitHub
+        </a>
+        <a href="mailto:leonardodimaggio94@gmail.com">
+            <i class="fa-solid fa-envelope fa-xl"></i> Email
+        </a>
+        <a href="https://www.linkedin.com/in/leonardo-di-maggio-4ba403268/">
+            <i class="fa-brands fa-linkedin fa-xl"></i> Linkedin
+        </a>
+        <a href="../../public/curriculum/Leonardo-Di-Maggio-cv.pdf" download>
+            <i class="fa-solid fa-user fa-xl"></i> Curriculum
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-mobile fa-xl"></i> Num Telefono
+        </a>
+    </div>
 
       <div class="col-md-6 border-left py-3">
           <h1>Contact form</h1>
@@ -108,7 +131,6 @@ export default {
             :rules="validateRequest"
             ></textarea>
             <ErrorMessage class="text-danger" name="message" />
-
           </div>
           <button class="btn btn-primary" @click="sendMail()">Submit</button>
           </Form>
@@ -133,25 +155,4 @@ div{
     
 </style>
 
-
-    <!-- <div class="d-flex flex-column gap-3">
-        <div>
-            Contatti 
-        </div>
-        <a href="https://github.com/ldm0805"> 
-            <i class="fa-brands fa-square-github fa-xl"></i> GitHub
-        </a>
-        <a href="mailto:leonardodimaggio94@gmail.com">
-            <i class="fa-solid fa-envelope fa-xl"></i> Email
-        </a>
-        <a href="https://www.linkedin.com/in/leonardo-di-maggio-4ba403268/">
-            <i class="fa-brands fa-linkedin fa-xl"></i> Linkedin
-        </a>
-        <a href="../../public/curriculum/Leonardo-Di-Maggio-cv.pdf" download>
-            <i class="fa-solid fa-user fa-xl"></i> Curriculum
-        </a>
-        <a href="#">
-            <i class="fa-solid fa-mobile fa-xl"></i> Num Telefono
-        </a>
-    </div> -->
     
