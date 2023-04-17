@@ -36,16 +36,19 @@ export default {
       }
       return true;
     },
+    validateLength5(value) {
+      if (value.length < 5) {
+        return "Il campo deve contenere minimo 5 caratteri";
+      }
+      return true;
+    },
     sendMail() {
       let params = {
-        // name: document.getElementById("name").value,
-        // email: document.getElementById("email").value,
-        // message: document.getElementById("message").value,
         name: this.name,
         email: this.email,
         message: this.message,
       };
-      if(this.name && this.email != ''){
+      if(this.name && this.email && this.message != ''){
 
         const serviceID = "service_87wg2n8";
         const templateID = "template_1fzse0z";
@@ -92,16 +95,16 @@ export default {
     </div>
 
       <div class="col-md-6 border-left py-3">
-          <h1>Contact form</h1>
+          <h1>Contattami!</h1>
           <Form id="my-form">
           <div class="form-group">
-            <h5 for="name">Name</h5>
+            <h5 for="name">Nome</h5>
             <Field
               type="text"
               class="form-control"
               name="name"
               id="name"
-              placeholder="Enter name"
+              placeholder="Inserisci il tuo nome"
               v-model="name"
               :rules="validateRequest"
             />
@@ -115,21 +118,24 @@ export default {
               class="form-control"
               name="email"
               id="email"
-              placeholder="Enter email"
+              placeholder="Inserisci l'email"
               v-model="email"
               :rules="validateEmail"
             />
             <ErrorMessage class="text-danger" name="email" />
           </div>
           <div class="form-group">
-            <h5 for="message">Message</h5>
-            <textarea 
+            <h5 for="message">Messaggio</h5>
+            <Field 
+            as="textarea"
             class="form-control" 
+            name="message"
             id="message" 
             rows="3"  
             v-model="message"
-            :rules="validateRequest"
-            ></textarea>
+            :rules="[validateRequest, validateLength5]"
+            placeholder="Messaggio"
+            />
             <ErrorMessage class="text-danger" name="message" />
           </div>
           <button class="btn btn-primary" @click="sendMail()">Submit</button>
