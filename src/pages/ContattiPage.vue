@@ -51,11 +51,7 @@
             </div>
 
 </template>
-<script type="text/javascript">
-      (function () {
-        emailjs.init("J01QMSmqj93QY8gmJ");
-      })();
-    </script>
+
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 div{
