@@ -1,23 +1,26 @@
 <template lang="">
     <header class="header_cont">
-        <nav class="navbar navbar-expand-lg">
-            <router-link class="personal-link" to="/">LDM</router-link>  
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <ul class="navbar-nav">
-                    <li class="nav-item  nav-link" v-for="(item, index) in navItems" :key="index">
-                        <router-link
-                        :to="{ name: item.routeName }"
-                        class="nav-item nav-link"
-                        >
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-expand-lg">
+                <router-link class="personal-link" to="/">LDM</router-link>  
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li class="nav-item  nav-link" v-for="(item, index) in navItems" :key="index">
+                            <router-link
+                            :to="{ name: item.routeName }"
+                            class="nav-item nav-link"
+                            >
                             {{ item.label }}
                         </router-link>
                     </li>
                 </ul>
             </div>
         </nav>
+    </div>
     </header>
 </template>
 <script>

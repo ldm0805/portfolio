@@ -16,23 +16,23 @@ import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel'
       slides:
       [
         {
-        image: '../../public/img/cane.jpg',
+        image: '/img/cane.jpg',
         description: 'Immagine cane',
         },
         {
-        image: '../../public/img/cane.jpg',
+        image: '/img/cane.jpg',
         description: 'Immagine gatto',
         },
         {
-        image: '../../public/img/cane.jpg',
+        image: '/img/cane.jpg',
         description: 'Immagine ciao',
         },
         {
-        image: '../../public/img/cane.jpg',
+        image: '/img/cane.jpg',
         description: 'Immagine e',
         },
         {
-        image: '../../public/img/cane.jpg',
+        image: '/img/cane.jpg',
         description: 'Immagine sdfsdfsd',
         },
     ],
