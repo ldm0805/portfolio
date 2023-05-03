@@ -67,7 +67,7 @@ export default {
   > -->
     <div v-for="(item, index) in slides" :key="index" class="p-4">
       <router-link
-        v-bind:to="{
+        :to="{
           name: 'ProductPage',
           params: {
             id: item.id,
