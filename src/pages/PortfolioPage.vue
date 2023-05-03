@@ -14,18 +14,22 @@ export default {
       hovered: null,
       slides: [
         {
+          id: 1,
           image: "/img/portfolio/boolflix/netflix_home.png",
           description: "Immagine cane",
         },
         {
+          id: 2,
           image: "/img/portfolio/boolzapp/whatsapp.png",
           description: "Immagine gatto",
         },
         {
+          id: 3,
           image: "/img/portfolio/campominato/campominato.png",
           description: "Immagine ciao",
         },
         {
+          id: 4,
           image: "/img/portfolio/spotify/spotify_home.png",
           description: "Immagine e",
         },
@@ -62,16 +66,27 @@ export default {
     :breakpoints="breakpoints"
   > -->
     <div v-for="(item, index) in slides" :key="index" class="p-4">
-      <div>
-        <div class="cont_image">
-          <img :src="item.image" />
+      <router-link
+        v-bind:to="{
+          name: 'ProductPage',
+          params: {
+            id: item.id,
+            image: item.image,
+            description: item.description,
+          },
+        }"
+      >
+        <div>
+          <div class="cont_image">
+            <img :src="item.image" />
+          </div>
+          <div class="description">
+            <span>
+              {{ item.description }}
+            </span>
+          </div>
         </div>
-        <div class="description">
-          <span>
-            {{ item.description }}
-          </span>
-        </div>
-      </div>
+      </router-link>
     </div>
   </div>
 
@@ -158,8 +173,5 @@ span {
     height: 100%;
     width: 100%;
   }
-}
-.cont_image img {
-  display: block; /* Add this to remove any extra whitespace below the image */
 }
 </style>
