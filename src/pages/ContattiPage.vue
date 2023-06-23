@@ -1,5 +1,5 @@
 <script>
-import Modal from "../modal/modal.vue";
+import Modal from "../modal/Modal.vue";
 export default {
   components: {
     Modal,
