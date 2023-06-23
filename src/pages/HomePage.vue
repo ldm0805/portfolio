@@ -6,7 +6,7 @@
                 <div class="word"></div>                    
             </div>
             <p>
-                Questo è il mio portfolio e qui potrete vedere alcuni dei miei lavori.
+                Questo è il mio portfolio e qui potrete vedere alcuni dei miei lavori.provaprova
             </p>
             <router-link class="portfolio-link" to="/PortfolioPage">Val al Portfolio</router-link>
         </div>
@@ -16,7 +16,7 @@
 export default {
     
 }
-let words = ['<Leonardo Di Maggio />'],
+let words = ['<Leonardo Di Maggio/>'],
     part,
     i = 0,
     offset = 0,
