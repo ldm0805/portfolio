@@ -2,6 +2,7 @@
 import "vue3-carousel/dist/carousel.css";
 import { defineComponent } from "vue";
 import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
+import { store } from "../store";
 export default {
   name: "PortfolioPage",
   components: {
@@ -11,29 +12,30 @@ export default {
   },
   data() {
     return {
+      store,
       hovered: null,
-      slides: [
-        {
-          id: 1,
-          image: "/img/portfolio/boolflix/netflix_home.png",
-          description: "Immagine cane",
-        },
-        {
-          id: 2,
-          image: "/img/portfolio/boolzapp/whatsapp.png",
-          description: "Immagine gatto",
-        },
-        {
-          id: 3,
-          image: "/img/portfolio/campominato/campominato.png",
-          description: "Immagine ciao",
-        },
-        {
-          id: 4,
-          image: "/img/portfolio/spotify/spotify_home.png",
-          description: "Immagine e",
-        },
-      ],
+      // slides: [
+      //   {
+      //     id: 1,
+      //     image: "/img/portfolio/boolflix/netflix_home.png",
+      //     description: "Immagine cane",
+      //   },
+      //   {
+      //     id: 2,
+      //     image: "/img/portfolio/boolzapp/whatsapp.png",
+      //     description: "Immagine gatto",
+      //   },
+      //   {
+      //     id: 3,
+      //     image: "/img/portfolio/campominato/campominato.png",
+      //     description: "Immagine ciao",
+      //   },
+      //   {
+      //     id: 4,
+      //     image: "/img/portfolio/spotify/spotify_home.png",
+      //     description: "Immagine e",
+      //   },
+      // ],
       settings: {
         itemsToShow: 1,
         snapAlign: "center",
@@ -65,14 +67,12 @@ export default {
     v-bind="settings"
     :breakpoints="breakpoints"
   > -->
-    <div v-for="(item, index) in slides" :key="index" class="p-4">
+    <div v-for="(item, index) in store.slides" :key="index" class="p-4">
       <router-link
         :to="{
           name: 'ProductPage',
           params: {
             id: item.id,
-            image: item.image,
-            description: item.description,
           },
         }"
       >
