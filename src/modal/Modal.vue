@@ -146,5 +146,20 @@ export default {
     </div>
   </div>
 </template>
-<style lang=""></style>
-<!-- modifica prova -->
+<style lang="scss" scoped>
+@use "../styles/partials/variables" as *;
+
+.portfolio-link{
+    display: inline-block;
+    margin-top: 1em;
+    padding: .5em 1em;
+    text-decoration: none;
+    border: 2px solid black;
+    color: $font_color;
+    background-color: transparent;
+    &:hover{
+        scale: 1.1;
+        box-shadow: black 3px 3px;   
+    }
+}
+</style>

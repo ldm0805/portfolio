@@ -14,28 +14,7 @@ export default {
     return {
       store,
       hovered: null,
-      // slides: [
-      //   {
-      //     id: 1,
-      //     image: "/img/portfolio/boolflix/netflix_home.png",
-      //     description: "Immagine cane",
-      //   },
-      //   {
-      //     id: 2,
-      //     image: "/img/portfolio/boolzapp/whatsapp.png",
-      //     description: "Immagine gatto",
-      //   },
-      //   {
-      //     id: 3,
-      //     image: "/img/portfolio/campominato/campominato.png",
-      //     description: "Immagine ciao",
-      //   },
-      //   {
-      //     id: 4,
-      //     image: "/img/portfolio/spotify/spotify_home.png",
-      //     description: "Immagine e",
-      //   },
-      // ],
+
       settings: {
         itemsToShow: 1,
         snapAlign: "center",
@@ -59,15 +38,15 @@ export default {
 <template lang="">
   <div class="portfolio_cont">
     <h2>Portfolio</h2>
-    <!-- </div>
+    </div>
   <carousel
     :itemsToShow="3"
     :wrapAround="true"
     :transition="400"
     v-bind="settings"
     :breakpoints="breakpoints"
-  > -->
-    <div v-for="(item, index) in store.slides" :key="index" class="p-4">
+  >
+    <slide v-for="(item, index) in store.slides" :key="index" class="p-4">
       <router-link
         :to="{
           name: 'ProductPage',
@@ -87,21 +66,21 @@ export default {
           </div>
         </div>
       </router-link>
-    </div>
-  </div>
+    </slide>
+    <template #addons>
+        <navigation>
+          <template #next>
+            <span> <i class="fa-solid fa-chevron-right"></i> </span>
+          </template>
+          <template #prev>
+            <span> <i class="fa-solid fa-chevron-left"></i> </span>
+          </template>
+        </navigation>
+        <pagination />
+      </template>
+    </carousel>
+    
 
-  <!-- <template #addons>
-      <navigation>
-        <template #next>
-          <span> <i class="fa-solid fa-chevron-right"></i> </span>
-        </template>
-        <template #prev>
-          <span> <i class="fa-solid fa-chevron-left"></i> </span>
-        </template>
-      </navigation>
-      <pagination />
-    </template> -->
-  <!-- </carousel> -->
 </template>
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;

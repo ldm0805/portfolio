@@ -6,7 +6,7 @@
                 <div class="word"></div>                    
             </div>
             <p>
-                Questo è il mio portfolio e qui potrete vedere alcuni dei miei lavori.provaprova
+                Questo è il mio portfolio e qui potrete vedere alcuni dei miei lavori.
             </p>
             <router-link class="portfolio-link" to="/PortfolioPage">Val al Portfolio</router-link>
         </div>
