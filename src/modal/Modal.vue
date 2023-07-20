@@ -79,11 +79,11 @@ export default {
           <h5 class="modal-title" id="exampleModalLabel">Contattami!</h5>
           <button
             type="button"
-            class="close"
+            class="portfolio-link"
             data-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true"><i class="fa-solid fa-xmark fa-lg"></i></span>
           </button>
         </div>
         <div class="modal-body">

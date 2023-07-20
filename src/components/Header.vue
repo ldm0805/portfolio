@@ -9,7 +9,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
-                        <li class="nav-item  nav-link" v-for="(item, index) in navItems" :key="index">
+                        <li class="nav-item nav-link" v-for="(item, index) in navItems" :key="index" data-toggle="collapse" data-target="#navbarNavAltMarkup">
                             <router-link
                             :to="{ name: item.routeName }"
                             class="nav-item nav-link"
