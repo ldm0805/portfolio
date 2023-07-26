@@ -1,12 +1,10 @@
 <template lang="">
    <footer>
-    <div class="d-flex justify-content-between align-items-center px-2">
+    <div class="d-flex justify-content-center align-items-center px-2">
         <div class="d-flex align-items-center gap-2 py-1">
-            <i class="fa-regular fa-copyright pb-1"></i>
-            <h6 class="">2023 LDM</h6>
-        </div>
-        <div>
-            Prova
+           
+            
+            <h6 class="">made with  <i class="fa-solid fa-robot"></i> by LDM</h6>
         </div>
     </div>
    </footer>

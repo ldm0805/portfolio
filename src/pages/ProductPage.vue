@@ -23,4 +23,15 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+.cont_image{
+ height: 200px;
+ width: 200px;
+ object-fit: contain;
+ img{
+  height:100%;
+  width: 100%;
+ }
+}
+</style>
 

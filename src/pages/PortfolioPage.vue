@@ -93,6 +93,20 @@ span {
   color: $font_color;
 }
 
+
+.cont_image {
+  width: 15em;
+  height: 15em;
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// Carosello
+
 .carousel__slide {
   padding: 5px;
 }
@@ -141,16 +155,6 @@ span {
     &:hover {
       font-size: 30px;
     }
-  }
-}
-.cont_image {
-  width: 30%;
-  height: 50%;
-  object-fit: cover;
-  object-position: center;
-  img {
-    height: 100%;
-    width: 100%;
   }
 }
 </style>
