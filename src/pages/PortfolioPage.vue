@@ -61,7 +61,7 @@ export default {
           </div>
           <div class="description">
             <span>
-              {{ item.description }}
+              {{ item.title }}
             </span>
           </div>
         </div>
